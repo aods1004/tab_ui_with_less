@@ -1,0 +1,37 @@
+@line-color : #888888;
+@radius: 4px;
+
+ul.tab {
+    z-index: 3;
+    border-style: solid;
+    border-bottom-color: @line-color;
+    border-width: 0px 0px 1px 0px;
+    position: relative;
+    li {
+        float: left;
+        list-style-type: none;
+        padding: 0px 3px 0px 3px;
+        div {
+            z-index:1;
+            position: relative;
+            padding: 5px 1em 5px 1em;
+            margin-bottom: -1px;
+            border-top-left-radius: @radius;
+            border-top-right-radius: @radius;
+            &:hover {
+                background-color: yellow;
+            }
+        }
+    }
+    li.active div {
+        z-index: 2;
+        border: 0px solid @line-color;
+        border-width: 1px 1px 0px 1px;
+        background-color: white;
+    }
+    &:after {
+        content: ""; 
+        display: block; 
+        clear: both;
+    }
+}
